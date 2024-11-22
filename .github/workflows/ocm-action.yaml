@@ -62,7 +62,7 @@ jobs:
         with:
           action: add_resources
           component: ${{ env.COMP_NAME }}
-          resources: ../../ocm/resources.yaml
+          resources: ./../../ocm/resources.yaml
           version: ${{ env.VERSION }}
           # Note below that you have to use double quotes for the VARIANTS value.
           var_values: |
