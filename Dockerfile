@@ -10,7 +10,6 @@ WORKDIR /home/app
 
 COPY --from=podinfo /podinfo/bin/podinfo .
 COPY --from=podinfo /podinfo/bin/podcli /usr/local/bin/podcli
-COPY ./ui ./ui
 RUN chown -R app:app ./
 
 USER app
