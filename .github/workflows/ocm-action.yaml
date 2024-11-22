@@ -6,7 +6,7 @@ on:
     branches:
       - main
 env:
-  COMP_NAME: acme.org
+  COMP_NAME: acme.org/podinfo
   PROVIDER: github.com/linuxbsdfreak
   CD_REPO: ghcr.io/linuxbsdfreak/ocm
   OCI_URL: ghcr.io/linuxbsdfreak
