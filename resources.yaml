@@ -10,5 +10,5 @@ type: ociArtifact
 version: ${VERSION}
 input:
   type: "dockermulti"
-  repository: ${IMAGE}
-  variants: ${VARIANTS}
+  repository: "${IMAGE}"
+  variants: "${VARIANTS}"
