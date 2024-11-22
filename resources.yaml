@@ -1,14 +1,14 @@
 ---
-name: podinfo-chart
+name: chart
 type: helmChart
 input:
   type: helm
   path: ./podinfo
 ---
-name: podinfo-image
-type: ociArtifact
+name: image
+type: ociImage
 version: ${VERSION}
 input:
   type: "dockermulti"
   repository: ${IMAGE}
-  variants: "linux/amd64 linux/arm64"
+  variants: ${VARIANTS}
