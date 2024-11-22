@@ -7,9 +7,9 @@ on:
       - main
 env:
   COMP_NAME: acme.org/podinfo
-  PROVIDER: github.com/acme
-  CD_REPO: ghcr.io/acme/ocm
-  OCI_URL: ghcr.io/acme
+  PROVIDER: github.com/linuxbsdfreak
+  CD_REPO: ghcr.io/linuxbsdfreak/ocm
+  OCI_URL: ghcr.io/linuxbsdfreak
 jobs:
   build-and-create-ocm:
     runs-on: ubuntu-latest
