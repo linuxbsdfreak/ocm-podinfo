@@ -1,6 +1,10 @@
 name: ocm-resources
 run-name: Build component version using resources.yaml
+on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
 env:
   COMP_NAME: acme.org/podinfo
   PROVIDER: github.com/acme
