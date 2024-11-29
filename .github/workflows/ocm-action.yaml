@@ -82,7 +82,7 @@ jobs:
           comprepo_password: ${{ secrets.GITHUB_TOKEN }}
       # Optional: attach the common transport format archive to the workflow run
       - name: Upload transport archive
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ocm-podinfo-ctf.zip
           path: |
