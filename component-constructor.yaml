@@ -16,7 +16,6 @@ components:
     type: helmChart
     version: 6.7.1
     input:
-      version: 6.7.1
       type: dir
       path: ./deploy/
  # Image referenced in the Helm chart     
