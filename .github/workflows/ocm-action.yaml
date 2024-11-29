@@ -2,7 +2,7 @@ name: ocm-components
 run-name: Build component version using component.yaml
 on:
   workflow_run:
-    workflows: ["Helm Chart CI"]
+    workflows: ["Lint and Test Charts"]
     types:
       - completed
   # push:
