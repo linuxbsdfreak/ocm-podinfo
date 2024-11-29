@@ -12,14 +12,16 @@ components:
       repoUrl: ${REPO_URL}
       commit: ${COMMIT}
   resources:
-  - name: chart
+  - name: helm-chart-local-folder
     type: helmChart
     input:
-      type: helm
-      path: helmchart
+      type: dir
+      path: ./helmchart/
+ # Image referenced in the Helm chart     
   - name: ocm-image
     type: ociImage
     version: ${VERSION}
     access:
       type: ociArtifact
+      repository: ocm/acme.org/podinfo/image
       imageReference: ${IMAGE}:${VERSION}
