@@ -1,0 +1,25 @@
+components:
+- name: ${COMP_NAME}
+  version: ${VERSION}
+  provider:
+    name: ${PROVIDER}
+  sources:
+  - name: source
+    type: filesystem
+    version: ${VERSION}
+    access:
+      type: gitHub
+      repoUrl: ${REPO_URL}
+      commit: ${COMMIT}
+  resources:
+  - name: chart
+    type: helmChart
+    input:
+      type: helm
+      path: helmchart
+  - name: ocm-image
+    type: ociImage
+    version: ${VERSION}
+    access:
+      type: ociArtifact
+      imageReference: ${IMAGE}:${VERSION}
