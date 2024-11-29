@@ -16,7 +16,7 @@ components:
     type: helmChart
     input:
       type: dir
-      path: ./helmchart/
+      path: ./deploy/
  # Image referenced in the Helm chart     
   - name: ocm-image
     type: ociImage
