@@ -1,5 +1,5 @@
-name: Lint and Test Charts
-
+name: docker-helm-action
+run-name: Validate Dockerfile and helm chart using docker-helm-action.yaml
 on:
   push:
     branches:
