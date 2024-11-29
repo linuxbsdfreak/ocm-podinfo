@@ -1,10 +1,13 @@
 name: ocm-components
 run-name: Build component version using component.yaml
 on:
-  workflow_dispatch:
-  push:
-    branches:
-      - main  
+  workflow_run:
+    workflows: ["Helm Chart CI"]
+    types:
+      - completed
+  # push:
+  #   branches:
+  #     - main  
 env:
   COMP_NAME: acme.org/podinfo
   PROVIDER: github.com/linuxbsdfreak

@@ -1,0 +1,37 @@
+name: Helm Chart CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  helm-chart-testing:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Helm
+      run: |
+        curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+
+    - name: Install Helm plugins (Unit Test, Diff)
+      run: |
+        helm plugin install https://github.com/quintush/helm-unittest
+        helm plugin install https://github.com/databus23/helm-diff
+
+    - name: Run Helm Chart-Testing Lint
+      run: |
+        ct lint --charts ./helmchart/
+
+    - name: Run Helm Unit Tests
+      run: |
+        helm unittest ./helmchart/
+
+    - name: Check for Changes with Helm Diff
+      run: |
+        helm diff upgrade podinfo ./helmchart --values ./helmchart/values.yaml
